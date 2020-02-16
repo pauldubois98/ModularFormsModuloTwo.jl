@@ -1,6 +1,3 @@
-using SparseArrays: SparseVector, spzeros, dropzeros!, sparse
-import Base: +, *, ^
-
 """
 We can represent a modular forms mod 2 by it's coefficients as a polynomial in q or Δ.
 The routines in this file are made for q-series.
