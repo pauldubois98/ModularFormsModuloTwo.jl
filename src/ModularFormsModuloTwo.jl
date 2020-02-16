@@ -6,6 +6,7 @@ module ModularFomrsModuloTwo
     import Base: +, *, ^
 
     include("arithmetic.jl")
+    include("generators.jl")
 
 
 
