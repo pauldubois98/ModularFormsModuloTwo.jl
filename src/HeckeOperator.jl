@@ -5,7 +5,7 @@ Routines for Hecke operators on modular forms mod 2
 
 
 """
-Hecke(p, f)
+    Hecke(p, f)
 
 Compute Tp|f (with mathematical accuracy).
 

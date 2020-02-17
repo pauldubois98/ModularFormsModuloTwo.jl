@@ -1,10 +1,15 @@
 using JLD2, FileIO
 
+
+
+"""
+    loadFormListBinary(MAXi, LENGTH)
+
+Load the modular form list from file, using this module's standard naming system.
+"""
 function loadFormListBinary(MAXI::Int, LENGTH::Int)
-    # # load data
-    # @load "../data/Delta_q-series"*string(MAXI)*".jld2" Deltas
-    # # and return
-    # return Deltas
+    # standard naming
     file_name = "delta_q-"*"maxi"*string(MAXI)*"-"*"length"*string(LENGTH)*".jdl2"
+    # load
     return load(joinpath(@__DIR__, file_name), "list")
 end

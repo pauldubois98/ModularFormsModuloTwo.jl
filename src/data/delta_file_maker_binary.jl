@@ -10,7 +10,7 @@ MAXI = 10^2
 # list
 list = MFmod2.ModularFormOrNothingList(nothing, MAXI)
 
-# \Delta^2
+# Δ^2
 d2 = MFmod2.delta_k(2, LENGTH)
  # 1st iteration
 println("Calculating: ", "Δ^1")
@@ -27,5 +27,5 @@ while k < MAXI-2
 end
 
 
-# final saving
+# final saving (standard naming)
 @save joinpath(@__DIR__, "delta_q-"*"maxi"*string(MAXI)*"-"*"length"*string(LENGTH)*".jdl2") list
