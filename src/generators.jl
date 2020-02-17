@@ -19,7 +19,7 @@ julia> zero(1)
 1-element SparseVector{Int8,Int64} with 0 stored entries
 ```
 """
-function zero(LENGTH::Int=10^3)::SparseVector{Int8,Int}
+function zero(LENGTH::Int=10^3)::ModularForm
     return spzeros(Int8, LENGTH)
 end
 
@@ -39,7 +39,7 @@ julia> one(1)
   [1]  =  1
 ```
 """
-function one(LENGTH::Int=10^3)::SparseVector{Int8,Int}
+function one(LENGTH::Int=10^3)::ModularForm
     f = spzeros(Int8, LENGTH)
     f[1] = 1
     return f
@@ -59,7 +59,7 @@ julia> disp(delta(10^6))
 MF mod 2 (coef to 1000000) - 01000000010000000000000001000000000000000000000001...
 ```
 """
-function delta(LENGTH::Int=10^3)::SparseVector{Int8,Int}
+function delta(LENGTH::Int=10^3)::ModularForm
     f = spzeros(Int8, LENGTH)
     indice::Int = 2
     i::Int = 1
@@ -95,7 +95,7 @@ MF mod 2 (coef to 1000) - 00000100000001000000000000000100000001000000010000...
 ```
 """
 
-function delta_k(k::Int, LENGTH::Int=10^3)::SparseVector{Int8,Int}
+function delta_k(k::Int, LENGTH::Int=10^3)::ModularForm
     if k==0
         return one(LENGTH)
     elseif k==1

@@ -47,7 +47,7 @@ julia> f1*f2
   [...]
 ```
 """
-function *(f1::SparseVector{Int8,Int}, f2::SparseVector{Int8,Int})::SparseVector{Int8,Int}
+function *(f1::ModularForm, f2::ModularForm)::ModularForm
     n::Int = min(f1.n, f2.n)
     f = spzeros(Int8, n)
     for n in f1.nzind
@@ -80,7 +80,7 @@ julia> @time sq(f)
   0.000020 seconds (23 allocations: 9.875 KiB)
 ```
 """
-function sq(f::SparseVector{Int8,Int})::SparseVector{Int8,Int}
+function sq(f::ModularForm)::ModularForm
     f_sq = spzeros(Int8, f.n)
     for n in f.nzind
         if 2n-1 <= f_sq.n
@@ -103,7 +103,7 @@ julia> f^5
   [...]
 ```
 """
-function ^(f::SparseVector{Int8,Int}, k::Int)::SparseVector{Int8,Int}
+function ^(f::ModularForm, k::Int)::ModularForm
     # we use binary decomposition of k for effciency
     f_pow=one(f.n)
     while k != 0
@@ -136,7 +136,7 @@ julia> truncate(f, 100)
   [...]
 ```
 """
-function truncate(f::SparseVector{Int8,Int}, LENGTH::Int=10^3)::SparseVector{Int8,Int}
+function truncate(f::ModularForm, LENGTH::Int=10^3)::ModularForm
     if f.n>LENGTH
         return f[1:LENGTH]
     else
@@ -166,7 +166,7 @@ julia> disp(f2)
 MF mod 2 (coef to 100) - 01000000010000000000000001000000000000000000000001...
 ```
 """
-function truncate(f1::SparseVector{Int8,Int}, f2::SparseVector{Int8,Int}, LENGTH::Int=-1)::Tuple{SparseVector{Int8,Int},SparseVector{Int8,Int}}
+function truncate(f1::ModularForm, f2::ModularForm, LENGTH::Int=-1)::Tuple{ModularForm,ModularForm}
     if LENGTH == -1
         if f1.n>f2.n
             return (f1[1:f2.n], f2)
@@ -189,7 +189,7 @@ end
 
 Up to maximum coefficient known for both f1 and f2, tell equality.
 """
-function eq(f1::SparseVector{Int8,Int}, f2::SparseVector{Int8,Int})::Bool
+function eq(f1::ModularForm, f2::ModularForm)::Bool
     f1, f2 = truncate(f1, f2)
     return f1==f2
 end
