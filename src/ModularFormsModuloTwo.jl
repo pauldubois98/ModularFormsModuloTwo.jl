@@ -45,6 +45,7 @@ module ModularFormsModuloTwo
     include("HeckeOperator.jl")
     include("data/storage.jl")
     include("data/storage_binary.jl")
+    include("recognizer.jl")
 
 
 

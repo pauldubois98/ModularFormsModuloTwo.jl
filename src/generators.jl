@@ -49,6 +49,7 @@ end
     delta([LENGTH])
 
 Create the standard Δ form, with coefficients up to LENGTH
+=> as a Δ-series!
 
 # Example
 ```julia-repl
@@ -75,6 +76,7 @@ end
     delta_k(k[, LENGTH])
 
 Create the standard Δ^k form, with coefficients up to LENGTH
+=> as a q-series!
 
 # Example
 ```julia-repl
@@ -94,7 +96,6 @@ julia> disp(delta_k(5))
 MF mod 2 (coef to 1000) - 00000100000001000000000000000100000001000000010000...
 ```
 """
-
 function delta_k(k::Int, LENGTH::Int=10^3)::ModularForm
     if k==0
         return one(LENGTH)
@@ -106,3 +107,24 @@ function delta_k(k::Int, LENGTH::Int=10^3)::ModularForm
         return delta(LENGTH)^k
     end
 end
+
+
+
+"""
+    Delta(k[, LENGTH])
+
+Create the standard Δ form, with coefficients up to LENGTH
+=> as a Δ-series!
+
+# Example
+```julia-repl
+julia> disp(Delta(1))
+MF mod 2 (coef to 100) - 01000000000000000000000000000000000000000000000000...
+```
+"""
+function Delta_k(k::Int, LENGTH::Int=10^2)::ModularForm
+    df = zero(LENGTH)
+    df[k+1]=1
+    return df
+end
+
