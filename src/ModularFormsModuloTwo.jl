@@ -43,6 +43,8 @@ module ModularFormsModuloTwo
     include("arithmetic.jl")
     include("generators.jl")
     include("HeckeOperator.jl")
+    include("data/storage.jl")
+    include("data/storage_binary.jl")
 
 
 
