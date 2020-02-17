@@ -50,7 +50,7 @@ julia> f = delta(10^6) + delta_k(3, 10^6)
 julia> disp(f)
 MF mod 2 (coef to 1000000) - 01010000010100000001000001000000000000000001000001...
 
-julia> df = MFmod2.to_delta(f, precalculated)
+julia> df = to_delta(f, precalculated)
 100-element SparseArrays.SparseVector{Int8,Int64} with 2 stored entries:
   [2  ]  =  1
   [4  ]  =  1
@@ -78,3 +78,33 @@ function to_Δ(mf::ModularForm, precalculated::ModularFormOrNothingList, LENGTH:
 end
 to_delta = to_Δ
 
+
+
+
+"""
+    drop_error(f, precalculated, LENGTH)
+
+Drops the numerical error that f might have (as long as this error isn't too large).
+
+# Example
+```julia-repl
+julia> precalculated = loadFormListBinary(10^2, 10^6)
+julia> f = delta(10^6) + delta_k(3, 10^6)
+julia> disp(f)
+MF mod 2 (coef to 1000000) - 01010000010100000001000001000000000000000001000001...
+
+julia> T3f = MFmod2.Hecke(11, f)
+julia> disp(T3f)
+MF mod 2 (coef to 90909) - 01000000010000000000000001000000000000000000000001...
+
+julia> T3f_exact = drop_error(T3f, precalculated)
+julia> disp(T3f_exact)
+MF mod 2 (coef to 1000000) - 01000000010000000000000001000000000000000000000001...
+
+```
+"""
+function drop_error(f::ModularForm, precalculated::ModularFormOrNothingList, LENGTH::Int=length(precalculated[2]))::ModularForm
+    df = to_Δ(f, precalculated)
+    f = to_q(df, precalculated)
+    return f
+end
