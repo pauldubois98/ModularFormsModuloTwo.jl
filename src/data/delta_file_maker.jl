@@ -14,15 +14,15 @@ d2 = MFmod2.delta_k(2, LENGTH)
  # 1st iteration
 println("Calculating: ", "Δ^1")
 d = MFmod2.delta(LENGTH)
-list[1]=d
-k=1
+list[2] = d
+k = 1
 # main loop
 while k < MAXI-2
     global k, d, d2
     k += 2
     println("Calculating: ", "Δ^"*string(k))
     d *= d2
-    list[k]=d
+    list[k+1] = d
 end
 
 

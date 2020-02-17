@@ -31,9 +31,9 @@ Save the modular forms modulo 2 f as name in file_name.
 """
 function saveFormList(forms_list::ModularFormOrNothingList, file_name::String, module_data::Bool=true)
     if module_data
-        file=open(joinpath(@__DIR__, file_name), "a")
+        file=open(joinpath(@__DIR__, file_name), "w")
     else
-        file=open(file_name, "a")
+        file=open(file_name, "w")
     end
     for f in forms_list
         if f === nothing
