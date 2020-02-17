@@ -5,7 +5,6 @@ Essentialy, this is 0 form, 1 form, and powers of Δ.
 
 
 
-#standart modular forms mod 2 initalizers
 """
     zero([LENGTH])
 

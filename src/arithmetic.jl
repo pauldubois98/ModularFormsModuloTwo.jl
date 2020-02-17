@@ -31,10 +31,6 @@ function +(f1::SparseVector{Int8,Int}, f2::SparseVector{Int8,Int})::SparseVector
             f[n] = 1-f[n]
         end
     end
-    # f = spzeros(Int8, n)
-    # for i = 1:n
-    #     f[i] = f1[i] ⊻ f2[i] # ⊻=xor
-    # end
     return dropzeros!(f)
 end
 
