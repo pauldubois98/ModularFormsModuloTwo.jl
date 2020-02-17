@@ -22,7 +22,7 @@ julia> disp(Hecke(3, d))
 MF mod 2 (coef to 333) - 00000000000000000000000000000000000000000000000000...
 ```
 """
-function Hecke(p::Int, f::SparseVector{Int8,Int})::SparseVector{Int8,Int}
+function Hecke(p::Int, f::ModularForm)::ModularForm
     Tpf = spzeros(Int8, f.n÷p)
     i::Int = 0
     while i+1 <= Tpf.n

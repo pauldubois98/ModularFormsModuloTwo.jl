@@ -23,7 +23,7 @@ julia> f1+f2
   [...]
 ```
 """
-function +(f1::SparseVector{Int8,Int}, f2::SparseVector{Int8,Int})::SparseVector{Int8,Int}
+function +(f1::ModularForm, f2::ModularForm)::ModularForm
     m = min(f1.n, f2.n)
     f = truncate(f1, m)
     for n in f2.nzind

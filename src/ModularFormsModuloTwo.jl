@@ -6,6 +6,12 @@ module ModularFormsModuloTwo
     using SparseArrays: SparseVector, spzeros, dropzeros!, sparse
     import Base: +, *, ^
 
+    ModularForm = SparseVector{Int8,Int}
+    ModularFormOrNothing = Union{SparseVector{Int8,Int}}
+    ModularFormList = Array{SparseVector{Int8,Int}, 1}
+    ModularFormOrNothingList = Array{Union{SparseVector{Int8,Int}, Nothing}, 1}
+
+
     """
     disp(f[, maxi])
 
@@ -21,7 +27,7 @@ module ModularFormsModuloTwo
     MF mod 2 (coef to 100) - 01000000010000000000000001000000000000000000000001...
     ```
     """
-    function disp(f::SparseVector{Int8,Int}, maxi::Int = 50)
+    function disp(f::ModularForm, maxi::Int = 50)
         print("MF mod 2 (coef to " * string(f.n) * ") - ")
         for i = 1:min(maxi, f.n)
             print(f[i])
@@ -33,10 +39,6 @@ module ModularFormsModuloTwo
         end
     end
 
-    ModularForm = SparseVector{Int8,Int}
-    ModularFormOrNothing = Union{SparseVector{Int8,Int}
-    ModularFormList = Array{SparseVector{Int8,Int},1}
-    ModularFormOrNothingList = Array{Union{SparseVector{Int8,Int}, Nothing},1}
 
     include("arithmetic.jl")
     include("generators.jl")
