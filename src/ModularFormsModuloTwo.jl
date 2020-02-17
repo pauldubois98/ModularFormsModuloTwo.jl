@@ -8,6 +8,7 @@ module ModularFormsModuloTwo
 
     include("arithmetic.jl")
     include("generators.jl")
+    include("HeckeOperator.jl")
 
 
 
