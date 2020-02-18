@@ -27,7 +27,7 @@ f = MFmod2.delta(LENGTH) + MFmod2.delta_k(3, LENGTH)
 println("f:")
 MFmod2.disp(f)
 
-T3f = MFmod2.Hecke(11, f)
+T3f = MFmod2.Hecke(3, f)
 println("T_3|f:")
 MFmod2.disp(T3f)
 
@@ -46,12 +46,12 @@ f = MFmod2.delta(LENGTH) + MFmod2.delta_k(3, LENGTH)
 println("f:")
 MFmod2.disp(f)
 
-T3f = MFmod2.Hecke(11, f)
-println("T_3|f:")
-MFmod2.disp(T3f)
+T11f = MFmod2.Hecke(11, f)
+println("T_11|f:")
+MFmod2.disp(T11f)
 
-T3f_exact = MFmod2.drop_error(T3f, precalculated)
-println("T_3|f:")
-MFmod2.disp(T3f_exact)
+T11f_exact = MFmod2.drop_error(T11f, precalculated)
+println("T_11|f:")
+MFmod2.disp(T11f_exact)
 println(">>> numercial error dropped !")
 

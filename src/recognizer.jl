@@ -93,12 +93,12 @@ julia> f = delta(10^6) + delta_k(3, 10^6)
 julia> disp(f)
 MF mod 2 (coef to 1000000) - 01010000010100000001000001000000000000000001000001...
 
-julia> T3f = MFmod2.Hecke(11, f)
-julia> disp(T3f)
+julia> T11f = MFmod2.Hecke(11, f)
+julia> disp(T11f)
 MF mod 2 (coef to 90909) - 01000000010000000000000001000000000000000000000001...
 
-julia> T3f_exact = drop_error(T3f, precalculated)
-julia> disp(T3f_exact)
+julia> T11f_exact = drop_error(T11f, precalculated)
+julia> disp(T11f_exact)
 MF mod 2 (coef to 1000000) - 01000000010000000000000001000000000000000000000001...
 
 ```
