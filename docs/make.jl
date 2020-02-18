@@ -6,11 +6,19 @@ using .ModularFormsModuloTwo
 makedocs(
     sitename="ModularFormsModuloTwo.jl",
     authors = "Paul Dubois",
-    #format = DocumenterLaTeX.LaTeX(),
+    build = "",
     )
 
-deploydocs(
-    repo = "github.com/pauldubois98/ModularFormsModuloTwo.jl.git",
-    )
+# makedocs(
+#     sitename="ModularFormsModuloTwo.jl",
+#     authors = "Paul Dubois",
+#     build = "pdf",
+#     format = DocumenterLaTeX.LaTeX(),
+#     )
+
+# deploydocs(
+#    root = "",
+#    repo = "github.com/pauldubois98/ModularFormsModuloTwo.jl.git",
+#    )
 
 
