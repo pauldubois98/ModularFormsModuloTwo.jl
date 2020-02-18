@@ -1,9 +1,6 @@
 # ModularFormsModuloTwo.jl Documentation
 
-```@example
-Pages   = ["compare_plain-binary.jl"]
-```
-
+This module contains usual routines to do computation on modular forms modulo two.
 
 ## General
 ```@autodocs
