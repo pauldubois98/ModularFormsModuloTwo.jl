@@ -6,10 +6,19 @@ module ModularFormsModuloTwo
     using SparseArrays: SparseVector, spzeros, dropzeros!, sparse
     import Base: +, *, ^
 
+    """
+    We can represent a modular forms mod 2 by it's coefficients as a polynomial in q or Δ.
+    The routines in this file are made for q-series.
+    Modular forms modulo 2 have coefficients in q-series being 0 most of the times, and 1 otherwise.
+    Thus, we will represent them as sparse 1-dimensional arrays (sparse vectors) of type SparseVector{Int8,Int}.
+    """
     ModularForm = SparseVector{Int8,Int}
     ModularFormOrNothing = Union{SparseVector{Int8,Int}}
     ModularFormList = Array{SparseVector{Int8,Int}, 1}
-    ModularFormOrNothingList = Array{Union{SparseVector{Int8,Int}, Nothing}, 1}
+    """
+    Lists of Modular Forms will be useful for storage.
+    """
+    ModularFormOrNothingList = Array{ModularFormOrNothing, 1}
 
 
     """
@@ -41,6 +50,7 @@ module ModularFormsModuloTwo
 
 
     include("arithmetic.jl")
+    include("equality.jl")
     include("generators.jl")
     include("HeckeOperator.jl")
     include("data/storage.jl")
