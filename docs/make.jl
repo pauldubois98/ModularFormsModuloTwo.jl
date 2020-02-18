@@ -10,7 +10,6 @@ makedocs(
     )
 
 deploydocs(
-    root   = "<current-directory>",
     repo = "github.com/pauldubois98/ModularFormsModuloTwo.jl.git",
     )
 
