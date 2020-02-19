@@ -13,7 +13,7 @@ module ModularFormsModuloTwo
     Thus, we will represent them as sparse 1-dimensional arrays (sparse vectors) of type SparseVector{Int8,Int}.
     """
     ModularForm = SparseVector{Int8,Int}
-    ModularFormOrNothing = Union{SparseVector{Int8,Int}}
+    ModularFormOrNothing = Union{ModularForm, Nothing}
     ModularFormList = Array{SparseVector{Int8,Int}, 1}
     """
     Lists of Modular Forms will be useful for storage.
@@ -45,6 +45,41 @@ module ModularFormsModuloTwo
             println("...")
         else
             println()
+        end
+    end
+
+    function brackets(k::Int, brackets_level::Int=1)::String
+        if brackets_level==0 # never put brackets
+            return string(k)
+        elseif brackets_level==1 # put brackets if more than one digit
+            if k>9
+                return "{"*string(k)*"}"
+            else
+                return string(k)
+            end
+        else # always put brackets
+            return "{"*string(k)*"}"
+        end
+    end
+
+    
+    function delta_repr(f::ModularFormOrNothing, brackets_level::Int=1, math_mode::Bool=true)::String
+        if f===nothing
+            return "error"
+        end
+        if length(f.nzind)==0
+            return "0"
+        else
+            k = f.nzind[1]
+            s = "Δ^"*brackets(k-1, brackets_level)
+            for k in f.nzind[2:end]
+                s *= " + Δ^"*brackets(k-1, brackets_level)
+            end
+            if math_mode
+                return "\$"*replace(replace(s, "Δ"=>"\\Delta"), "\\Delta^1"=>"\\Delta")*"\$"
+            else
+                return s
+            end
         end
     end
 
