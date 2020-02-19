@@ -7,18 +7,21 @@ makedocs(
     sitename="ModularFormsModuloTwo.jl",
     authors = "Paul Dubois",
     build = "",
+    pages = [
+        "Home" => "index.md",
+        "Operations" => [
+            "standard.md", 
+            "advanced.md",
+            ],
+        "Coputation Storage" => "data.md",
+    ],
     )
 
+
+# PDF doc (not working)
 # makedocs(
 #     sitename="ModularFormsModuloTwo.jl",
 #     authors = "Paul Dubois",
 #     build = "pdf",
 #     format = DocumenterLaTeX.LaTeX(),
 #     )
-
-# deploydocs(
-#    root = "",
-#    repo = "github.com/pauldubois98/ModularFormsModuloTwo.jl.git",
-#    )
-
-

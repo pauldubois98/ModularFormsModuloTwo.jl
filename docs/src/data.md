@@ -1,0 +1,28 @@
+# Precalculated Data Storage
+
+## Use of Precalculated Variables
+Here is how to use the variables:
+- ``\ T_p|\Delta^k `` is `Hecke_primes[p][k+1]`
+- ``\ T_3^iT_5^j|\Delta^k `` is `Hecke_powers[i+1,j+1][k+1]`
+These are stored as Δ-series.
+The q-series of powers of Δ are stored as follows:
+- ``\ \Delta^k `` is `precalculated[k+1]`
+
+## Generating Precalculated Data
+The various precalculated data generators may be found in the data subfolder.
+Note that the user will have to generate the data again (it isn't stored on GitHub).
+Note as well that there are two implemented weys to store data, we advice the binary for speed purposes.
+
+## Binary Data Reads
+```@autodocs
+Modules = [ModularFormsModuloTwo]
+Pages   = ["data/storage_binary.jl"]
+```
+
+
+## Text Data Reads
+```@autodocs
+Modules = [ModularFormsModuloTwo]
+Pages   = ["data/storage.jl"]
+```
+

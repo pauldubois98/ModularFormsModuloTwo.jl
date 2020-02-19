@@ -13,8 +13,7 @@ precalculated = MFmod2.loadFormListBinary(MAXI, LENGTH)
 
 # parameters
 MAX_DELTA = length(precalculated)
-MAX_DELTA = 10
-MAX_PRIME = 15
+MAX_PRIME = 10^3
 
 # list
 list = Array{Union{MFmod2.ModularFormOrNothingList, Nothing}, 1}(nothing, MAX_PRIME)
