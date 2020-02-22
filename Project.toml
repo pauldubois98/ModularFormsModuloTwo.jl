@@ -14,3 +14,7 @@ SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
 
 [compat]
 julia = "1.0"
+FileIO = "1.2.2"
+JLD2 = "0.1.11"
+PrettyTables = "0.8.3"
+Primes = "0.3.0"
