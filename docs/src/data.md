@@ -3,7 +3,8 @@
 ## Raw Data
 Tables of data can be found here:
 * Table of [primes Hecke](../tables/Hecke_primes_table.html) operators on modular forms modulo two.
-If this is not enoght, remeber that this module allows anyone to generate new data.
+* Table of [powers of Hecke](../tables/Hecke_powers_table.html) operators on modular forms modulo two.
+If this is not enought, remeber that this module allows anyone to generate new data.
 
 ## Use of Precalculated Variables
 Here is how to use the variables:

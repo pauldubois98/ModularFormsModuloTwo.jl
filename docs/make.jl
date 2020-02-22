@@ -18,15 +18,15 @@ makedocs(
     )
 
 
-## PDF doc (not working)
-makedocs(
-    sitename="ModularFormsModuloTwo.jl",
-    authors = "Paul Dubois",
-    build = "pdf",
-    format = DocumenterLaTeX.LaTeX(),
-    pages = [
-        "standard.md", 
-        "advanced.md",
-        "data.md",
-    ]
-    )
+# # PDF doc (not working)
+# makedocs(
+#     sitename="ModularFormsModuloTwo.jl",
+#     authors = "Paul Dubois",
+#     build = "pdf",
+#     format = DocumenterLaTeX.LaTeX(),
+#     pages = [
+#         "standard.md", 
+#         "advanced.md",
+#         "data.md",
+#     ]
+#     )
