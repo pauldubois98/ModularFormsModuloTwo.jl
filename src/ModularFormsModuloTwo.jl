@@ -63,7 +63,7 @@ module ModularFormsModuloTwo
     end
 
     
-    function delta_repr(f::ModularFormOrNothing, brackets_level::Int=1, math_mode::Bool=true)::String
+    function delta_repr(f::ModularFormOrNothing, Delta_symbol::String="\\Delta", brackets_level::Int=1, math_mode::Bool=true)::String
         if f===nothing
             return "error"
         end
@@ -71,12 +71,12 @@ module ModularFormsModuloTwo
             return "0"
         else
             k = f.nzind[1]
-            s = "Δ^"*brackets(k-1, brackets_level)
+            s = Delta_symbol*"^"*brackets(k-1, brackets_level)
             for k in f.nzind[2:end]
-                s *= " + Δ^"*brackets(k-1, brackets_level)
+                s *= " + "*Delta_symbol*"^"*brackets(k-1, brackets_level)
             end
             if math_mode
-                return "\$"*replace(replace(s, "Δ"=>"\\Delta"), "\\Delta^1"=>"\\Delta")*"\$"
+                return "\$"*s*"\$"
             else
                 return s
             end

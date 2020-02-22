@@ -26,7 +26,4 @@ Manifest.toml
 
 
 # Module specific
-delta*.txt
-delta*.jdl2
-Hecke_primes*.jdl2
 Hecke_powers*.jdl2

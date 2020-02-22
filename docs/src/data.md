@@ -1,5 +1,10 @@
 # Precalculated Data Storage
 
+## Raw Data
+Tables of data can be found here:
+* Table of [primes Hecke](../tables/Hecke_primes_table.html) operators on modular forms modulo two.
+If this is not enoght, remeber that this module allows anyone to generate new data.
+
 ## Use of Precalculated Variables
 Here is how to use the variables:
 - ``\ T_p|\Delta^k `` is `Hecke_primes[p][k+1]`
@@ -10,8 +15,8 @@ The q-series of powers of Δ are stored as follows:
 
 ## Generating Precalculated Data
 The various precalculated data generators may be found in the data subfolder.
-Note that the user will have to generate the data again (it isn't stored on GitHub).
-Note as well that there are two implemented weys to store data, we advice the binary for speed purposes.
+Note that the user may create new data files, if the provided ones aren't enought.
+Note as well that there are two implemented ways to store data, we advice the binary for speed purposes.
 
 ## Binary Data Reads
 ```@autodocs
