@@ -88,8 +88,8 @@ module ModularFormsModuloTwo
     include("equality.jl")
     include("generators.jl")
     include("HeckeOperator.jl")
+    include("data/storage_text.jl")
     include("data/storage.jl")
-    include("data/storage_binary.jl")
     include("recognizer.jl")
 
 

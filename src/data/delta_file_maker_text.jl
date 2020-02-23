@@ -1,7 +1,6 @@
 include("../ModularFormsModuloTwo.jl")
 using .ModularFormsModuloTwo
 MFmod2 = ModularFormsModuloTwo
-using JLD2, FileIO
 
 # parameters
 LENGTH = 10^6
@@ -28,4 +27,4 @@ end
 
 
 # final saving (standard naming)
-@save joinpath(@__DIR__, "delta_q-"*"maxi"*string(MAXI)*"-"*"length"*string(LENGTH)*".jdl2") list
+MFmod2.saveFormList(list, "delta_q-"*"maxi"*string(MAXI)*"-"*"length"*string(LENGTH)*".txt")

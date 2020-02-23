@@ -22,13 +22,13 @@ Note as well that there are two implemented ways to store data, we advice the bi
 ## Binary Data Reads
 ```@autodocs
 Modules = [ModularFormsModuloTwo]
-Pages   = ["data/storage_binary.jl"]
+Pages   = ["data/storage.jl"]
 ```
 
 
 ## Text Data Reads
 ```@autodocs
 Modules = [ModularFormsModuloTwo]
-Pages   = ["data/storage.jl"]
+Pages   = ["data/storage_text.jl"]
 ```
 
