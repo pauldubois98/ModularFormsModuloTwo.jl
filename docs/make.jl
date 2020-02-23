@@ -25,6 +25,7 @@ makedocs(
 #     build = "pdf",
 #     format = DocumenterLaTeX.LaTeX(),
 #     pages = [
+#         "index.md",
 #         "standard.md", 
 #         "advanced.md",
 #         "data.md",
