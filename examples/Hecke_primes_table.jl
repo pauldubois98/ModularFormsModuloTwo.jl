@@ -2,17 +2,17 @@ include("../src/ModularFormsModuloTwo.jl")
 using .ModularFormsModuloTwo
 using PrettyTables
 using Primes
-MFmod2 = ModularFormsModuloTwo
+MF2 = ModularFormsModuloTwo
 
 
 
 # parameters
-MAX_DELTA = 100
+MAX_DELTA = 1000
 MAX_PRIME = 1000
 MAX_POWER = 2
 
 # load Hecke primes
-Hecke_primes = MFmod2.loadHeckePrimesListBinary(MAX_PRIME, MAX_DELTA)
+Hecke_primes = MF2.loadHeckePrimesListBinary(MAX_PRIME, MAX_DELTA)
 
 
 
@@ -29,22 +29,23 @@ function Hecke_primes_make_table(Hecke_primes, maxi_prime::Int=50, maxi_delta_po
     header = Array{Any, 1}(undef, maxi_k)
     for i in 1:length(primes)
         if math_mode
-            table[i, 1] = "\$T_"*MFmod2.brackets(primes[i], brackets_level)*"\$"
+            table[i, 1] = "\$T_"*MF2.brackets(primes[i], brackets_level)*"\$"
         else
-            table[i, 1] = "T_"*MFmod2.brackets(primes[i], brackets_level)
+            table[i, 1] = "T_"*MF2.brackets(primes[i], brackets_level)
         end
         for j in 1:maxi_k
-            table[i, j+1] = MFmod2.delta_repr( Hecke_primes[primes[i]][2*j] , Delta_symbol, brackets_level, math_mode)
+            table[i, j+1] = MF2.delta_repr( Hecke_primes[primes[i]][2*j] , Delta_symbol, brackets_level, math_mode)
         end
     end
-    header = vcat([""], [MFmod2.delta_repr(MFmod2.Delta_k(2j-1), Delta_symbol, brackets_level, math_mode) for j in 1:maxi_k])
+    header = vcat([""], [MF2.delta_repr(MF2.Delta_k(2j-1), Delta_symbol, brackets_level, math_mode) for j in 1:maxi_k])
 
     return table, header
 end
 
-
+println("loaded")
+println()
 ### PARAMETERS
-table, header = Hecke_primes_make_table(Hecke_primes, 1000, 100, "Δ", 0, false)
+table, header = Hecke_primes_make_table(Hecke_primes, 1000, 250, "Δ", 0, false)
 
 ### Std out
 pretty_table(table, header)
@@ -80,7 +81,7 @@ pretty_table(table, header)
 # open("index.html", "w") do f
 #     pretty_table(f, table, header, backend = :html, formatter=html_dark)
 # end
-## => to do by hand
+## => use text & <pre></pre>
 
 
 ### LaTeX

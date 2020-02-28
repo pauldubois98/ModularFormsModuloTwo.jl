@@ -122,7 +122,7 @@ julia> disp(Delta(1))
 MF mod 2 (coef to 100) - 01000000000000000000000000000000000000000000000000...
 ```
 """
-function Delta_k(k::Int, LENGTH::Int=10^2)::ModularForm
+function Delta_k(k::Int, LENGTH::Int=k+1)::ModularForm
     df = zero(LENGTH)
     df[k+1]=1
     return df
