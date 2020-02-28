@@ -26,4 +26,6 @@ Manifest.toml
 
 
 # Module specific
-delta_q-maxi1000-length1000000.jdl2
+delta_q-maxi*.jdl2
+Hecke_primes*.jdl2
+Hecke_powers*.jdl2
