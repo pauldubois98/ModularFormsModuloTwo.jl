@@ -82,3 +82,14 @@ function eq(f1::ModularForm, f2::ModularForm)::Bool
     f1, f2 = truncate(f1, f2)
     return f1==f2
 end
+
+
+### EQUALITY up to size
+"""
+    iszero(f1, f2)
+
+Tell if a modular form is exactly zero (what ever it's size is).
+"""
+function iszero(f::ModularForm)::Bool
+    return length(f.nzind)==0
+end
