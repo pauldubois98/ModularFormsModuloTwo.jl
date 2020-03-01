@@ -10,5 +10,5 @@ Read the [documentation](https://pauldubois98.github.io/ModularFormsModuloTwo.jl
 ## Install in Julia
 ```
 julia> using Pkg
-julia> Pkg.add(PackageSpec(url="https://github.com/pauldubois98/ModularFormsModuloTwo.jl"))
+julia> Pkg.add("ModularFormsModuloTwo")
 ```
