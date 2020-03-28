@@ -4,7 +4,7 @@
 Tables of data can be found here:
 * Table of [primes Hecke](../tables/Hecke_primes_table.html) operators on modular forms modulo two.
 * Table of [powers of Hecke](../tables/Hecke_powers_table_capped.html) operators on modular forms modulo two.
-If this is not enought, remeber that this module allows anyone to generate new data.
+If this is not enough, remember that this module allows anyone to generate new data.
 
 ## Use of Precalculated Variables
 Here is how to use the variables:
@@ -16,7 +16,7 @@ The q-series of powers of Δ are stored as follows:
 
 ## Generating Precalculated Data
 The various precalculated data generators may be found in the data subfolder.
-Note that the user may create new data files, if the provided ones aren't enought.
+Note that the user may create new data files, if the provided ones aren't enough.
 Note as well that there are two implemented ways to store data, we advice the binary for speed purposes.
 
 ## Binary Data Reads

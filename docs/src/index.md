@@ -11,19 +11,19 @@ For a real introduction on modular forms, you can read "A Course in Arithmetic" 
 
 ### ``\ q``-series of Modular Forms
 Now, as they are holomorphic, they have a series expansion.
-For a moular form ``\ f``, there is an expansion 
+For a modular form ``\ f``, there is an expansion 
 
 ``\ f(z) = f(q) = \sum_{n \in \Z} a_n(f) q^n \qquad q = e^{2\pi i z}``
 
 Now, Victor Saul Miller has proved in his thesis that there exists a basis for modular forms such that all ``\ a_n`` are integers.
 
 ### Reduction Modulo 2
-Using this basis, we can reduce a mofular form ``\ f`` by taking it's ``\ q``-series and reducing all coefficients ``\ a_n`` modulo 2.
+Using this basis, we can reduce a modular form ``\ f`` by taking it's ``\ q``-series and reducing all coefficients ``\ a_n`` modulo 2.
 It may be proved that the resulting ``\ f`` is composed only of powers of ``\ \Delta`` with 
 
 ``\ \Delta = \sum_{m=0}^{\infty} q^{(2m+1)^2}.``
 
-Therfore, the space of modular forms modulo 2 is:
+Therefore, the space of modular forms modulo 2 is:
 
 ``\ \mathcal{F} = \left\langle \Delta^k | k \text{ odd} \right\rangle = \left\langle \Delta, \Delta^3, \Delta^5, \Delta^7, \dots \right\rangle ``
 
@@ -39,5 +39,5 @@ On the other hand, the ``\ \Delta``-polynomial is a finite representation, but c
 The way usual computer programs would deal with such object would be to represent ``\ 10^6`` ``\ q``-coefficients of modular forms, and suppose it is enough to take conclusions.
 In this library, we try to take advantage of the fact that we have a duality ``\ q-\Delta`` and that all coefficients are over ``\ \mathbb{F}_2`` (so either ``\ 0`` or ``\ 1``).
 There are functions ```to_q(df, precalculated)``` and ```to_Δ(f, precalculated)``` (in the [advanced operations](advanced/index.html) section) to switch from one representation to an other.
-There is also a very special ```drop_error(f, precalculated, LENGTH)``` function wich drops the numerical error from calculating a Hecke operator (in the [advanced operations](advanced/index.html) as well).
-(This is only possible by taking advantage of the fact that there is an equivanlent finite reprensentation in terms of ``\ \Delta``.)
+There is also a very special ```drop_error(f, precalculated, LENGTH)``` function which drops the numerical error from calculating a Hecke operator (in the [advanced operations](advanced/index.html) as well).
+(This is only possible by taking advantage of the fact that there is an equivalent finite representation in terms of ``\ \Delta``.)

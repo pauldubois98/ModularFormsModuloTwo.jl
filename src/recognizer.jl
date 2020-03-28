@@ -13,7 +13,7 @@ The user should make sure that the form may be written in terms for form from th
 """
     to_q(df, precalculated)
 
-Compute the q-series represenstaion of f (using precalculated).
+Compute the q-series representation of f (using precalculated).
 
 # Example
 ```julia-repl
@@ -41,7 +41,7 @@ end
     -- or --
     to_delta(f, precalculated)
 
-Compute the Δ-series represenstaion of f (using precalculated).
+Compute the Δ-series representation of f (using precalculated).
 
 # Example
 ```julia-repl

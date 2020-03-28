@@ -65,8 +65,8 @@ end
 
 Compute the square of a modular form (with mathematical accuracy).
 
-This is a much more effcient method then computing the square with multiplication.
-sq(f) is (much) more effcient then f*f, time wise and memory wise.
+This is a much more efficient method then computing the square with multiplication.
+sq(f) is (much) more efficient then f*f, time wise and memory wise.
 
 # Example
 ```julia-repl

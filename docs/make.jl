@@ -13,7 +13,7 @@ makedocs(
             "standard.md", 
             "advanced.md",
             ],
-        "Coputation Storage" => "data.md",
+        "Computation Storage" => "data.md",
     ]
     )
 
