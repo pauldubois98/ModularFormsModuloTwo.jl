@@ -29,3 +29,7 @@ Manifest.toml
 delta_q-maxi*.jdl2
 Hecke_primes*.jdl2
 Hecke_powers*.jdl2
+
+
+# Logo
+logo/
